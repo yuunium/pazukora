@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ぱずこら</title>
+  <script>
+    const APP_STORE_URL =
+      "https://apps.apple.com/jp/app/%E3%81%B1%E3%81%9A%E3%81%93%E3%82%89/id6751093839";
+    const GOOGLE_PLAY_URL =
+      "https://play.google.com/store/apps/details?id=com.yuunium.pazzcolla";
+
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    const isAndroid = /android/i.test(ua);
+    const isIOS =
+      /iPad|iPhone|iPod/.test(ua) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+    if (isAndroid) {
+      window.location.replace(GOOGLE_PLAY_URL);
+    } else if (isIOS) {
+      window.location.replace(APP_STORE_URL);
+    }
+  </script>
+</head>
+<body>
+  <h1>ぱずこら</h1>
+  <p>お使いの端末に対応したストアを開いています。</p>
+  <p><a href="https://apps.apple.com/jp/app/%E3%81%B1%E3%81%9A%E3%81%93%E3%82%89/id6751093839">App Store</a></p>
+  <p><a href="https://play.google.com/store/apps/details?id=com.yuunium.pazzcolla">Google Play</a></p>
+</body>
+</html>
